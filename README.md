@@ -68,9 +68,6 @@ FROM `bamboo-life-418613.bellabeat.dailyactivity` LIMIT 1000
 
 
 
-
-
-
 # Checking for Duplicates
 
 Duplicate check - dailycalories
@@ -147,7 +144,7 @@ Result: Duplicates were found only in sleepday table.
 | 8378563200 | 2016-04-25 00:00:00.000000 UTC | 1                 | 388                | 402               | 2                   |
 
 
-Verifed the duplicates in the sleepday table:
+Verified the duplicates in the sleepday table:
 
 ```sql
 SELECT *
@@ -195,9 +192,9 @@ FROM `bamboo-life-418613.bellabeat.weightlog`;
 Result: Null values were found in the Fat column of the weightlog table.
 
 
-Checked for null values in other tables:
-
+Checked for null values in remaining tables:
 dailyactivity, clean_sleepday, dailycalories, dailyintensities, dailysteps, hourlyintensities, hourlysteps
+
 No null values were found in these tables.
 
 
@@ -206,16 +203,15 @@ No null values were found in these tables.
 
 The weightlog table was dropped from the analysis due to the following reasons:
 
-Incomplete data: Only 8 unique IDs, which may not provide a comprehensive view of user behavior and patterns.
-Missing values: High number of null values in the Fat column, suggesting unreliable data capture or reporting.
-Relevance: Weight data was not considered a major variable for the analysis.
+1. Incomplete data: Only 8 unique IDs, which may not provide a comprehensive view of user behavior and patterns.
+2. Missing values: High number of null values in the Fat column, suggesting unreliable data capture or reporting.
+3. Relevance: Weight data was not considered a major variable for the analysis.
 
 
 
 Data Manipulation
-1. Adding Time of Day Column
 
-Added a DayPeriod column to the hourlyintensities and hourlysteps tables to categorize data into "Morning" (6 AM to 11:59 AM), "Afternoon" (12 PM to 3:59 PM), and "Night" (4 PM to 5:59 AM):
+Adding Time of Day Column:  I added a DayPeriod column to the hourlyintensities and hourlysteps tables to categorize data into "Morning" (6 AM to 11:59 AM), "Afternoon" (12 PM to 3:59 PM), and "Night" (4 PM to 5:59 AM):
 
 ```sql
 SELECT *, 
@@ -236,12 +232,11 @@ SELECT *,
    END AS DayPeriod
 FROM bellabeats.hourlysteps;
 ```
-
 The resulting tables were saved as hourlystepstod and hourlyintensitiestod.
 
 
 
-2. Adding Day of Week Column
+### Adding Day of Week Column
 
 Added a DayOfWeek column to the dailysteps, dailyintensities, dailycalories, dailyactivity, and clean_sleepday tables using the FORMAT_DATE() function:
 
@@ -271,14 +266,14 @@ The resulting tables were saved as:
 | dailystepsdow| dailyintensititesdow | dailycaloriesdow | TotalMinutesAsleep |
 |------------|---------------------------|-------------------|--------------------|
 
-##Renaming Columns for Consistency
+## Renaming Columns for Consistency
 
 Renamed the ActivityDate column to ActivityDay in the dailyactivitydow table:
 ```sql
 ALTER TABLE bellabeat.dailyactivitydow
 RENAME COLUMN ActivityDate TO ActivityDay;
 ```
-Renamed the SleepDay column to ActivityDay in the clean_sleepdaydow table:
+Renaming the SleepDay column to ActivityDay in the clean_sleepdaydow table:
 ```sql
 ALTER TABLE bellabeat.clean_sleepdaydow
 RENAME COLUMN SleepDay TO ActivityDay;
