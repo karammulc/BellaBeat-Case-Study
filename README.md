@@ -174,7 +174,7 @@ WHERE row_num = 1;
 | 8378563200 | 2016-04-25 00:00:00 UTC   | 1                 | 388                | 402            |
 
 
-4. Checking for Null Values
+## Checking for Null Values
 
 Null value check - weightlog
 ```sql
@@ -208,8 +208,7 @@ The weightlog table was dropped from the analysis due to the following reasons:
 3. Relevance: Weight data was not considered a major variable for the analysis.
 
 
-
-Data Manipulation
+## New Columns
 
 Adding Time of Day Column:  I added a DayPeriod column to the hourlyintensities and hourlysteps tables to categorize data into "Morning" (6 AM to 11:59 AM), "Afternoon" (12 PM to 3:59 PM), and "Night" (4 PM to 5:59 AM):
 
@@ -232,9 +231,9 @@ SELECT *,
    END AS DayPeriod
 FROM bellabeats.hourlysteps;
 ```
-The resulting tables were saved as hourlystepstod and hourlyintensitiestod.
-
-
+The resulting tables were saved as:
+| hourlystepstod | hourlyintensitiestod |
+|-------------------|--------------|
 
 ### Adding Day of Week Column
 
@@ -266,7 +265,7 @@ The resulting tables were saved as:
 | dailystepsdow| dailyintensititesdow | dailycaloriesdow | TotalMinutesAsleep |
 |------------|---------------------------|-------------------|--------------------|
 
-## Renaming Columns for Consistency
+### Renaming Columns for Consistency
 
 Renamed the ActivityDate column to ActivityDay in the dailyactivitydow table:
 ```sql
