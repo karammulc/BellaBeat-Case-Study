@@ -53,7 +53,7 @@ FROM `bamboo-life-418613.bellabeat.dailyactivity` LIMIT 1000
     ELSE 'Counts differ across some tables'
   END AS ConsistencyCheck
 ``` 
-## Result: Counts differed across some tables.
+### Result: Counts differed across some tables.
 
 | Dataset           | Distinct IDs |
 |-------------------|--------------|
@@ -68,7 +68,7 @@ FROM `bamboo-life-418613.bellabeat.dailyactivity` LIMIT 1000
 
 
 
-# Checking for Duplicates
+## Checking for Duplicates
 
 Duplicate check - dailycalories
 ```sql
@@ -78,7 +78,7 @@ GROUP BY Id, ActivityDay, Calories
 HAVING Count(*) > 1;
 ```
 
-Duplicate check - dailyactivity
+Duplicate check - dailyactivity   
 ```sql SELECT Id, ActivityDate, TotalSteps, Count(*)
 FROM bellabeat.dailyactivity
 GROUP BY Id, ActivityDate, TotalSteps
@@ -135,7 +135,7 @@ GROUP BY Id,
          TotalTimeInBed
 HAVING Count(*) > 1;
 ```
-Result: Duplicates were found only in sleepday table.
+*Result: Duplicates were found only in sleepday table.*
 
 | Id         | SleepDay                    | TotalSleepRecords | TotalMinutesAsleep | TotalMinutesInBed | Count of Duplicates |
 |------------|-----------------------------|-------------------|--------------------|-------------------|---------------------|
@@ -144,7 +144,7 @@ Result: Duplicates were found only in sleepday table.
 | 8378563200 | 2016-04-25 00:00:00.000000 UTC | 1                 | 388                | 402               | 2                   |
 
 
-Verified the duplicates in the sleepday table:
+Verifying the duplicates in the sleepday table
 
 ```sql
 SELECT *
@@ -153,16 +153,6 @@ WHERE (Id = 4388161847 AND SleepDay = "2016-05-05 00:00:00.000000 UTC")
   OR (Id = 4702921684 AND SleepDay = "2016-05-07 00:00:00.000000 UTC")
   OR (Id = 8378563200 AND SleepDay = "2016-04-25 00:00:00.000000 UTC");
 
-Removed duplicates from the sleepday table and created a new clean_sleepday table:
-sqlCopy codeCREATE OR REPLACE TABLE `bellabeat.clean_sleepday` AS
-SELECT *
-FROM (
-  SELECT
-    *,
-    ROW_NUMBER() OVER (PARTITION BY Id, SleepDay ORDER BY Id) as row_num
-  FROM `bellabeat.sleepday`
-)
-WHERE row_num = 1;
 ```
 | Id         | SleepDay                  | TotalSleepRecords | TotalMinutesAsleep | TotalTimeInBed |
 |------------|---------------------------|-------------------|--------------------|----------------|
@@ -173,6 +163,19 @@ WHERE row_num = 1;
 | 8378563200 | 2016-04-25 00:00:00 UTC   | 1                 | 388                | 402            |
 | 8378563200 | 2016-04-25 00:00:00 UTC   | 1                 | 388                | 402            |
 
+## Removing duplicates from the sleepday table // creating a new clean_sleepday table
+
+```sql
+CREATE OR REPLACE TABLE `bellabeat.clean_sleepday` AS
+SELECT *
+FROM (
+  SELECT
+    *,
+    ROW_NUMBER() OVER (PARTITION BY Id, SleepDay ORDER BY Id) as row_num
+  FROM `bellabeat.sleepday`
+)
+WHERE row_num = 1;
+```
 
 ## Checking for Null Values
 
@@ -189,9 +192,9 @@ SELECT
 FROM `bamboo-life-418613.bellabeat.weightlog`;
 ```
 
-Result: Null values were found in the Fat column of the weightlog table.
+Results: Null values were found in the Fat column of the weightlog table.
 
-
+...
 Checked for null values in remaining tables:
 dailyactivity, clean_sleepday, dailycalories, dailyintensities, dailysteps, hourlyintensities, hourlysteps
 
@@ -238,7 +241,6 @@ The resulting tables were saved as:
 ### Adding Day of Week Column
 
 Added a DayOfWeek column to the dailysteps, dailyintensities, dailycalories, dailyactivity, and clean_sleepday tables using the FORMAT_DATE() function:
-
 ```sql
 SELECT *, 
     FORMAT_DATE('%A', ActivityDay) AS DayOfWeek
