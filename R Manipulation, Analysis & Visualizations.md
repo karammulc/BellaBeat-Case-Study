@@ -6,8 +6,7 @@ date: "2024-04-18"
 
 This markdown document presents an analysis for the Bellabeats dataset. This dataset contains tables containing information about health data. CSVs contain information including daily activity, calories, intensities, steps and sleep.
 
-
-Loading required libraries
+#### Loading required libraries
 
 ```{r}
 library(tidyverse)
@@ -16,7 +15,7 @@ library(ggplot2)
 ```
 
 
-### Loading data set
+#### Loading data set
 ```{r}
 dailyactivity <- read.csv("dailyactivityclean.csv")
 dailycalories <- read.csv("dailycaloriesclean.csv")
