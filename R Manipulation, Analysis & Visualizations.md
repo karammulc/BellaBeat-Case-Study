@@ -1,10 +1,6 @@
----
-title: "Bellabeat data analysis"
-output: pdf_document
-date: "2024-04-18"
----
+# R Manipulation, Analysis & Visualizations
 
-This markdown document presents an analysis for the Bellabeats dataset. This dataset contains tables containing information about health data. CSVs contain information including daily activity, calories, intensities, steps and sleep.
+This markdown document presents an analysis of the Bellabeats dataset. This dataset contains tables containing health data, and CSVs contain information including daily activity, calories, intensities, steps, and sleep.
 
 #### Loading required libraries
 
@@ -28,7 +24,7 @@ sleepday <- read.csv("sleepdayclean.csv")
 
 ## Continued Dataset Exploration and Manipulation
 
-### General Exploration
+#### General Exploration
 ```{r}
 str(dailyactivity)
 str(dailycalories)
@@ -49,7 +45,7 @@ summary(hourlysteps)
 summary(sleepday)
 ```
 
-### Ensuring date and time columns in the datasets are converted from chr to POSIXct format
+#### Ensuring date and time columns in the datasets are converted from chr to POSIXct format
 
 ```{r}
 # Convert ActivityDay to Date format
@@ -60,20 +56,14 @@ dailystep$ActivityDay <- as.Date(dailystep$ActivityDay, format = "%Y-%m-%d")
 sleepday$ActivityDay <- as.Date(sleepday$ActivityDay, format = "%m/%d/%Y")
 ```
 
-### Converting ActivityHour to POSIXct format
+#### Converting ActivityHour to POSIXct format
 ```{r}
 hourlyintensities$ActivityHour <- as.POSIXct(hourlyintensities$ActivityHour, format = "%Y-%m-%d %H:%M:%S")
 hourlysteps$ActivityHour <- as.POSIXct(hourlysteps$ActivityHour, format = "%Y-%m-%d %H:%M:%S")
 ```
+---------------------------------------
 
-
-### Setting order for visualizations
-```{r}
-day_of_week_order <- c("Monday", "Tuesday", "Wednesday","Thursday","Friday","Saturday","Sunday")
-```
-
-
-### Aggregating data by week
+#### Calculating the weekly average total distance from daily activity records and groups the results by week.
 ```{r}
 dailyactivity_weekly <- dailyactivity %>%
   mutate(Week = floor_date(ActivityDay, unit = "week")) %>%
@@ -81,42 +71,48 @@ dailyactivity_weekly <- dailyactivity %>%
   summarize(AvgDistance = mean(TotalDistance))
 ```
 
-
-### Aggregating total steps by day of the week
+#### Aggregating total steps by day of the week
 
 ```{r}
 steps_by_day <- aggregate(TotalSteps ~ DayOfWeek, data = dailyactivity, FUN = sum)
 ```
 
-### Creating average steps per day period variable
+####  Calculating the average number of steps taken during different periods of the day, grouping the results by day period
 
 ```{r}
 hourlysteps_dayperiod <- hourlysteps %>%
   group_by(DayPeriod) %>%
   summarize(avgsteps = mean(StepTotal))
 ```
+------------------------------------------------------------------------
 
-### Specifying the desired order of day periods
+#### Creating DayType
+
+```{r}
+dailyactivity$DayType <- ifelse(dailyactivity$DayOfWeek %in% c("Saturday", "Sunday"), "Weekend", "Weekday")
+```
+------------------------------------------------------------------------
+
+
+#### Setting orders for visualizations
+```{r}
+day_of_week_order <- c("Monday", "Tuesday", "Wednesday","Thursday","Friday","Saturday","Sunday")
+```
 
 ```{r}
 day_period_order <- c("Morning", "Afternoon", "Night")
 ```
 
-### Creating Daytype
+------------------------------------------------------------------------
 
-```{r}
-dailyactivity$DayType <- ifelse(dailyactivity$DayOfWeek %in% c("Saturday", "Sunday"), "Weekend", "Weekday")
-```
-
-
-###  Merging sleepday and dailyactivity datasets
+####  Merging sleepday and dailyactivity datasets
 
 ```{r}
 merged_sleepday_dailyactivity <- merge(sleepday, dailyactivity, by = c("Id", "ActivityDay","DayOfWeek"))
 ```
 
 ------------------------------------------------------------------------
-### User Summary
+#### User Summary
 
 ```{r}
 user_activity <- dailyactivity %>%
@@ -180,7 +176,7 @@ print(calories_summary)
 
 ------------------------------------------------------------------------
 
-### *Weekly Average Distance Traveled Over Time - Line Chart*
+### Weekly Average Distance Traveled Over Time - Line Chart
 
 ```{r}
 ggplot(dailyactivity_weekly, aes(x = Week, y = AvgDistance)) +
@@ -188,7 +184,7 @@ ggplot(dailyactivity_weekly, aes(x = Week, y = AvgDistance)) +
   labs(title = "Weekly Average Distance Traveled Over Time", x = "Week", y = "Average Distance")
 ```
 
-### *Average Daily Steps by Day of the Week - Bar Chart*
+### Average Daily Steps by Day of the Week - Bar Chart
 
 ```{r}
 ggplot(dailyactivity, aes(x = factor(DayOfWeek, levels = day_of_week_order), y = TotalSteps, fill = DayOfWeek)) +
@@ -209,7 +205,7 @@ ggplot(dailyactivity, aes(x = factor(DayOfWeek, levels = day_of_week_order), y =
         plot.title = element_text(size = 14, face = "bold"))
 ```
 
-### *Average Calories by Day of Week - Bar Chart*
+### Average Calories by Day of Week - Bar Chart
 
 ```{r}
 ggplot(dailyactivity, aes(x = factor(DayOfWeek, levels = day_of_week_order), y = Calories, fill = DayOfWeek)) +
@@ -230,7 +226,7 @@ ggplot(dailyactivity, aes(x = factor(DayOfWeek, levels = day_of_week_order), y =
         plot.title = element_text(size = 14, face = "bold"))
 ```
 
-### *Average Distance by Day of Week - Bar Chart*
+### Average Distance by Day of Week - Bar Chart
 
 ```{r}
 ggplot(dailyactivity, aes(x = factor(DayOfWeek, levels = day_of_week_order), y = TotalDistance, fill = DayOfWeek)) +
@@ -251,7 +247,7 @@ ggplot(dailyactivity, aes(x = factor(DayOfWeek, levels = day_of_week_order), y =
         plot.title = element_text(size = 14, face = "bold"))
 ```
 
-### *Average daily distance traveled by day of the week - Bar Chart*
+### Average daily distance traveled by day of the week - Bar Chart
 
 ```{r}
 ggplot(dailyactivity, aes(x = factor(DayOfWeek, levels = day_of_week_order), y = TotalDistance,fill = DayOfWeek)) +
@@ -272,7 +268,7 @@ ggplot(dailyactivity, aes(x = factor(DayOfWeek, levels = day_of_week_order), y =
         plot.title = element_text(size = 14, face = "bold"))
 ```
 
-### *Weekly Average Distance Traveled Over Time - Line Chart*
+### Weekly Average Distance Traveled Over Time - Line Chart
 
 ```{r}
 # Line plot for weekly average distance traveled
@@ -282,19 +278,7 @@ ggplot(dailyactivity_weekly, aes(x = Week, y = AvgDistance)) +
 
 ```
 
-------------------------------------------------------------------------
 
-# Hourly Tables Exploration
-
-```{r}
-str(hourlyintensities)
-str(hourlysteps)
-```
-
-```{r}
-summary(hourlyintensities)
-summary(hourlysteps)
-```
 
 ### Average Steps by Time of Day
 
@@ -326,7 +310,7 @@ ggplot(hourlyintensities, aes(x = factor(DayPeriod, levels = day_period_order), 
         plot.title = element_text(size = 14, face = "bold"))
 ```
 
-## *Analyzing Activity levels by Weekday or Weekend*
+## Analyzing Activity levels by Weekday or Weekend
 
 ```{r}
 dailyactivity$DayType <- ifelse(dailyactivity$DayOfWeek %in% c("Saturday", "Sunday"), "Weekend", "Weekday")
@@ -340,10 +324,6 @@ activity_summary <- dailyactivity  %>%
     summarize(AvgSteps = mean(TotalSteps),
     AvgCalories = mean(Calories),
     AvgDistance = mean(TotalDistance))
-```
-
-```{r}
-print(activity_summary)
 ```
 
 ```{r}
@@ -362,7 +342,7 @@ ggplot(activity_summary, aes(x = DayType, y = AvgCalories, fill = DayType)) +
         plot.title = element_text(size = 14, face = "bold"))
 ```
 
-### *Average Steps by Weekday vs. Weekend - Bar Chart*
+### Average Steps by Weekday vs. Weekend - Bar Chart
 
 ```{r}
 ggplot(activity_summary, aes(x = DayType, y = AvgSteps, fill = DayType)) +
@@ -403,9 +383,6 @@ ggplot(data = merged_sleepday_dailyactivity, mapping = aes(x = TotalDistance, y 
 ```
 
 
-```{r}
-t.test(TotalDistance ~ TotalMinutesAsleep, data = merged_sleepday_dailyactivity)
-```
 
 
 
