@@ -175,7 +175,22 @@ print(calories_summary)
 ```
 
 ------------------------------------------------------------------------
+#### Assigning 'Weekend' or 'Weekday' labels to days in the dailyactivity dataset based on the day of the week.
 
+```{r}
+dailyactivity$DayType <- ifelse(dailyactivity$DayOfWeek %in% c("Saturday", "Sunday"), "Weekend", "Weekday")
+```
+
+#### Calculating the average steps, calories burned, and distance traveled for weekdays and weekends separately
+
+```{r}
+activity_summary <- dailyactivity  %>%
+    group_by(DayType)  %>%
+    summarize(AvgSteps = mean(TotalSteps),
+    AvgCalories = mean(Calories),
+    AvgDistance = mean(TotalDistance))
+```
+------------------------------------------------------------------------
 ### Weekly Average Distance Traveled Over Time - Line Chart
 
 ```{r}
@@ -310,21 +325,9 @@ ggplot(hourlyintensities, aes(x = factor(DayPeriod, levels = day_period_order), 
         plot.title = element_text(size = 14, face = "bold"))
 ```
 
-## Analyzing Activity levels by Weekday or Weekend
 
-```{r}
-dailyactivity$DayType <- ifelse(dailyactivity$DayOfWeek %in% c("Saturday", "Sunday"), "Weekend", "Weekday")
-```
 
-Calculating the average steps, calories burned, and distance traveled for weekdays and weekends separately
 
-```{r}
-activity_summary <- dailyactivity  %>%
-    group_by(DayType)  %>%
-    summarize(AvgSteps = mean(TotalSteps),
-    AvgCalories = mean(Calories),
-    AvgDistance = mean(TotalDistance))
-```
 
 ```{r}
 ggplot(activity_summary, aes(x = DayType, y = AvgCalories, fill = DayType)) +
