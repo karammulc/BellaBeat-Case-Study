@@ -158,7 +158,7 @@ Calories Summary Statistic Variable Assignment
 
 ```{r}
 calories_summary <- dailyactivity %>% 
-  summary(
+  summarize(
     min_calories = min(Calories),
     max_calories = max(Calories),
     mean_calories = mean(Calories),
@@ -191,7 +191,7 @@ activity_summary <- dailyactivity  %>%
     AvgDistance = mean(TotalDistance))
 ```
 ------------------------------------------------------------------------
-### Weekly Average Distance Traveled Over Time - Line Chart
+#### Weekly Average Distance Traveled Over Time 
 
 ```{r}
 ggplot(dailyactivity_weekly, aes(x = Week, y = AvgDistance)) +
@@ -199,7 +199,7 @@ ggplot(dailyactivity_weekly, aes(x = Week, y = AvgDistance)) +
   labs(title = "Weekly Average Distance Traveled Over Time", x = "Week", y = "Average Distance")
 ```
 
-### Average Daily Steps by Day of the Week - Bar Chart
+#### Average Daily Steps by Day of the Week 
 
 ```{r}
 ggplot(dailyactivity, aes(x = factor(DayOfWeek, levels = day_of_week_order), y = TotalSteps, fill = DayOfWeek)) +
@@ -220,7 +220,7 @@ ggplot(dailyactivity, aes(x = factor(DayOfWeek, levels = day_of_week_order), y =
         plot.title = element_text(size = 14, face = "bold"))
 ```
 
-### Average Calories by Day of Week - Bar Chart
+#### Average Calories Burned by Day of Week 
 
 ```{r}
 ggplot(dailyactivity, aes(x = factor(DayOfWeek, levels = day_of_week_order), y = Calories, fill = DayOfWeek)) +
@@ -262,28 +262,8 @@ ggplot(dailyactivity, aes(x = factor(DayOfWeek, levels = day_of_week_order), y =
         plot.title = element_text(size = 14, face = "bold"))
 ```
 
-### Average daily distance traveled by day of the week - Bar Chart
 
-```{r}
-ggplot(dailyactivity, aes(x = factor(DayOfWeek, levels = day_of_week_order), y = TotalDistance,fill = DayOfWeek)) +
-  geom_bar(stat = "summary", fun = "mean") +
-  labs(title = "Average Daily Distance Traveled by Day of the Week", x = "Day of the Week", y = "Average Distance") +
-  scale_fill_manual(values = c("Monday" = "steelblue",
-                               "Tuesday" = "darkorange",
-                               "Wednesday" = "forestgreen",
-                               "Thursday" = "orchid",
-                               "Friday" = "gold",
-                               "Saturday" = "firebrick",
-                               "Sunday" = "darkturquoise")) +
-  theme_minimal() +
-  theme(legend.position = "top",
-        legend.title = element_blank(),
-        axis.title = element_text(size = 12),
-        axis.text = element_text(size = 10),
-        plot.title = element_text(size = 14, face = "bold"))
-```
-
-### Weekly Average Distance Traveled Over Time - Line Chart
+#### Weekly Average Distance Traveled Over Time - Line Chart
 
 ```{r}
 # Line plot for weekly average distance traveled
@@ -295,7 +275,7 @@ ggplot(dailyactivity_weekly, aes(x = Week, y = AvgDistance)) +
 
 
 
-### Average Steps by Time of Day
+#### Average Steps by Time of Day
 
 ```{r}
 ggplot(hourlysteps_dayperiod, aes(x = factor(DayPeriod, levels = day_period_order), y = avgsteps, fill = DayPeriod)) +
@@ -310,7 +290,7 @@ ggplot(hourlysteps_dayperiod, aes(x = factor(DayPeriod, levels = day_period_orde
         plot.title = element_text(size = 14, face = "bold"))
 ```
 
-### Average Intensity by Time of Day
+#### Average Intensity by Time of Day
 
 ```{r}
 ggplot(hourlyintensities, aes(x = factor(DayPeriod, levels = day_period_order), y = AverageIntensity, fill = DayPeriod)) +
@@ -324,11 +304,7 @@ ggplot(hourlyintensities, aes(x = factor(DayPeriod, levels = day_period_order), 
         axis.text = element_text(size = 10),
         plot.title = element_text(size = 14, face = "bold"))
 ```
-
-
-
-
-
+#### Average Calories by Weekday vs. Weekend
 ```{r}
 ggplot(activity_summary, aes(x = DayType, y = AvgCalories, fill = DayType)) +
   geom_bar(stat = "identity", width = .75) +
@@ -345,7 +321,7 @@ ggplot(activity_summary, aes(x = DayType, y = AvgCalories, fill = DayType)) +
         plot.title = element_text(size = 14, face = "bold"))
 ```
 
-### Average Steps by Weekday vs. Weekend - Bar Chart
+#### Average Steps by Weekday vs. Weekend - Bar Chart
 
 ```{r}
 ggplot(activity_summary, aes(x = DayType, y = AvgSteps, fill = DayType)) +
@@ -362,12 +338,13 @@ ggplot(activity_summary, aes(x = DayType, y = AvgSteps, fill = DayType)) +
         axis.text = element_text(size = 10),
         plot.title = element_text(size = 14, face = "bold"))
 ```
-
+#### Total Steps vs. Calories
 ```{r}
 ggplot(data = dailyactivity, mapping = aes(x = TotalSteps, y = Calories, color = Id)) +
   geom_point() +
   geom_smooth() +
-  labs(title = "Total Steps vs. Calories")
+  labs(title = "Total Steps vs. Calories",
+  x = "Total Steps", y = "Calories")
 ```
 
 ------------------------------------------------------------------------
@@ -378,32 +355,30 @@ ggplot(data = dailyactivity, mapping = aes(x = TotalSteps, y = Calories, color =
 str(merged_sleepday_dailyactivity)
 ```
 
+#### Total Distance vs. Total Minutes Asleep
 ```{r}
 ggplot(data = merged_sleepday_dailyactivity, mapping = aes(x = TotalDistance, y = TotalMinutesAsleep,color = Id)) +
   geom_point() +
   geom_smooth() +
-  labs(title = "Very Active Minutes vs. Total Minutes Asleep")
+  labs(title = "Total Distance vs. Total Minutes Asleep", x = "Total Distance", y = "Total Minutes Asleep") 
 ```
 
 
 
 
-
+### Total Distance vs. Calories Burned
 ```{r}
 ggplot(data = dailyactivity, mapping = aes(x = TotalDistance, y = Calories,color = Id)) +
   geom_point() +
   geom_smooth() +
-  labs(title = "Total Distance vs. Calories Burned")
+  labs(title = "Total Distance vs. Calories Burned", x = "Total Distance", y = "Calories"))
 ```
-
-
-
 
 ```{r}
 print(user_activity)
 ```
 
-
+#Aggregation of Average Activity by User
 ```{r}
 
 user_activity <- dailyactivity %>%
@@ -413,8 +388,7 @@ user_activity <- dailyactivity %>%
             AvgDailyActiveMinutes = mean(VeryActiveMinutes + FairlyActiveMinutes + LightlyActiveMinutes))
 ```
 
-
-
+#### Average Daily Calories Burned by User
 ```{r}
 ggplot(user_activity, aes(x = Id, y = AvgDailyCalories, fill = Id)) +
   geom_bar(stat = "identity") +
