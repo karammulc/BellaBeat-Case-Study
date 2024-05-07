@@ -130,7 +130,7 @@ print(user_activity)
 ---------------------------------------
 ### Daily Activity Table Exploration
 
-Total Steps Summary Statistic Variable Assignment
+#### Total Steps Summary Statistic Variable Assignment
 
 ```{r}
 steps_summary <- dailyactivity %>% 
@@ -142,7 +142,7 @@ steps_summary <- dailyactivity %>%
   )
 ```
 
-Total Distance Summary Statistic Variable Assignment
+#### Total Distance Summary Statistic Variable Assignment
 
 ```{r}
 distance_summary <- dailyactivity %>%
@@ -154,7 +154,7 @@ distance_summary <- dailyactivity %>%
   ) 
 ```
 
-Calories Summary Statistic Variable Assignment
+#### Calories Summary Statistic Variable Assignment
 
 ```{r}
 calories_summary <- dailyactivity %>% 
@@ -166,7 +166,7 @@ calories_summary <- dailyactivity %>%
   )
 ```
 
-Printing Summary Statisitics
+#### Printing Summary Statistics
 
 ```{r}
 print(steps_summary)
@@ -396,6 +396,8 @@ ggplot(user_activity, aes(x = Id, y = AvgDailyCalories, fill = Id)) +
   theme_minimal() +
   theme(legend.position = "none",
         axis.title = element_text(size = 12),
+```
+
         axis.text = element_text(size = 10),
         plot.title = element_text(size = 14, face = "bold"))
 ```
