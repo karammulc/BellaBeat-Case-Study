@@ -75,3 +75,18 @@ While uploading the CSVs into BigQuery there was an error uploading hourlycalori
 
 Bellabeat's target market comprises health-conscious, tech-savvy women who prioritize a holistic approach to wellness. They value integrating health into their daily lives, aligning their routines with their menstrual cycles, and being part of a supportive community. These women appreciate innovative, data-driven solutions and stylish, functional products, spanning a diverse age range from young adults to older women.
 
+## Recommendations
+
+- Leverage the strong positive correlation between steps and calories burned by incorporating gamification elements into Bellabeat's apps and products. Develop personalized step challenges and rewards that align with each user's fitness level and goals, taking into account their cycle phases and other biometric data. This approach can motivate users to increase their physical activity and improve overall health outcomes while catering to the unique needs of women. 
+
+- Implementing a social network element to bellabeat app could leverage our target market, social connections and encourage current users to invite family and friends, possibly creating new memberships. 
+
+- A social hub could be a place to manage promotional events, challenges and possible rewards via partnerships. According to "Incentive-Based Interventions for Health-Related Behaviors" Implementing financial or non-financial incentives based on users' performance can further motivate behavior change. For example, providing discounts or coupons for reaching activity milestones could be an effective strategy.
+
+- Create dynamic challenges based on continuous data analysis. For example, since the case study revealed that the highest exercise intensity is in the afternoon, a challenge involving early morning activities could be introduced for a week, offering a new and engaging challenge for the community.
+
+- Conduct a larger-scale study with a diverse, representative sample of Bellabeat's target audience to gain deeper insights into their needs, preferences, and behaviors. Use this data to refine product features, marketing strategies, and content offerings.
+
+![Bellabeat Logo](images/bellabeat-logo.png)
+
+
