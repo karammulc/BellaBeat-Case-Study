@@ -88,33 +88,6 @@ Bellabeat's target market comprises health-conscious, tech-savvy women who prior
 - Conduct a larger-scale study with a diverse, representative sample of Bellabeat's target audience to gain deeper insights into their needs, preferences, and behaviors. Use this data to refine product features, marketing strategies, and content offerings.
 
 
-## Tables
-## Steps summary:
-
-| Min Steps | Max Steps | Mean Steps | Median Steps |
-|-----------|-----------|------------|--------------|
-| 0         | 36019     | 7637.910638| 7405.5       |
-
-## Distance summary:
-
-| Min Distance | Max Distance | Mean Distance | Median Distance |
-|--------------|--------------|---------------|-----------------|
-| 0            | 28.03000069  | 5.489702122   | 5.244999886     |
-
-## Average Steps by Time of Day
-
-| Day Period | Avg Steps    |
-|------------|--------------|
-| Afternoon  | 508.4705083  |
-| Morning    | 380.5684588  |
-| Night      | 239.9626947  |
-
-## Average activity by day type
-
-| DayType | Avg Steps   | Avg Calories | Avg Distance |
-|---------|-------------|--------------|--------------|
-| Weekday | 7668.699281 | 2301.516547  | 5.505107907  |
-| Weekend | 7550.571429 | 2309.546939  | 5.445999997  |
 
 ## Visualizations
 ![*Total Steps X Calories Burned*](https://github.com/karammulc/bella/blob/main/images/totalstepsxcaloriesburned.png)
@@ -156,25 +129,35 @@ General:
 - This data suggests that on average, people are taking more steps during the afternoon, followed by mornings, with the lowest count in the evening.
 *Morning: 381  Afternoon: 508   Night: 240*
 
+## Tables
+## Steps summary:
 
-## Relevant Studies
+| Min Steps | Max Steps | Mean Steps | Median Steps |
+|-----------|-----------|------------|--------------|
+| 0         | 36019     | 7637.910638| 7405.5       |
 
-### "Gamification for health promotion: systematic review of behaviour change techniques in smartphone apps" (BMJ Open)
+## Distance summary:
 
-Summary:
-- This systematic review evaluates the effectiveness of gamification elements in smartphone health apps for promoting healthy behaviors. It identifies key gamification strategies such as badges, leaderboards, competitions, rewards, and avatars that have been shown to motivate users and sustain engagement. The study emphasizes the use of behavior change techniques like goal setting, feedback, and social connectivity, which align with established health behavior change theories.
+| Min Distance | Max Distance | Mean Distance | Median Distance |
+|--------------|--------------|---------------|-----------------|
+| 0            | 28.03000069  | 5.489702122   | 5.244999886     |
+
+## Average Steps by Time of Day
+
+| Day Period | Avg Steps    |
+|------------|--------------|
+| Afternoon  | 508.4705083  |
+| Morning    | 380.5684588  |
+| Night      | 239.9626947  |
+
+## Average activity by day type
+
+| DayType | Avg Steps   | Avg Calories | Avg Distance |
+|---------|-------------|--------------|--------------|
+| Weekday | 7668.699281 | 2301.516547  | 5.505107907  |
+| Weekend | 7550.571429 | 2309.546939  | 5.445999997  |
 
 
-### “Changing health behaviors using financial incentives: a review from behavioral economics" (BMC Public Health)
-
-Summary:
-- This study reviews the effectiveness of financial incentive schemes in promoting health-related behaviors. It emphasizes the importance of well-designed incentive programs, highlighting behavioral economics principles like loss aversion and immediate rewards. Key findings include that incentives tied to immediate outcomes and framed as losses can be more motivating than those framed as gains.
-
-### Citations:
-
-Study: "Gamification for health promotion: systematic review of behaviour change techniques in smartphone apps." *BMJ Open*, 2023. Available at: BMJ Open.
-
-Study: "Changing health behaviors using financial incentives: a review from behavioral economics." *BMC Public Health*, 2023. Available at: BMC Public Health.
 
 ## Statistical Analysis
 
@@ -195,5 +178,24 @@ Study: "Changing health behaviors using financial incentives: a review from beha
 - The p-value (< 2.2e-16) is highly significant, suggesting that the correlation is statistically significant.
 - The linear regression model shows a significant negative relationship between Sedentary Minutes and Total Time in Bed (coefficient estimate: -0.47574, p-value: < 2e-16).
 - The adjusted R-squared (0.3832) indicates that 38.32% of the variance in Total Time in Bed can be explained by Sedentary Minutes.
+
+## Relevant Studies
+
+### "Gamification for health promotion: systematic review of behaviour change techniques in smartphone apps" (BMJ Open)
+
+Summary:
+- This systematic review evaluates the effectiveness of gamification elements in smartphone health apps for promoting healthy behaviors. It identifies key gamification strategies such as badges, leaderboards, competitions, rewards, and avatars that have been shown to motivate users and sustain engagement. The study emphasizes the use of behavior change techniques like goal setting, feedback, and social connectivity, which align with established health behavior change theories.
+
+
+### “Changing health behaviors using financial incentives: a review from behavioral economics" (BMC Public Health)
+
+Summary:
+- This study reviews the effectiveness of financial incentive schemes in promoting health-related behaviors. It emphasizes the importance of well-designed incentive programs, highlighting behavioral economics principles like loss aversion and immediate rewards. Key findings include that incentives tied to immediate outcomes and framed as losses can be more motivating than those framed as gains.
+
+### Citations:
+
+Study: "Gamification for health promotion: systematic review of behaviour change techniques in smartphone apps." *BMJ Open*, 2023. Available at: BMJ Open.
+
+Study: "Changing health behaviors using financial incentives: a review from behavioral economics." *BMC Public Health*, 2023. Available at: BMC Public Health.
 
 ## User Average Activity
