@@ -42,16 +42,16 @@ The Bellabeat data analysis project focuses on analyzing user data to gain insig
 
 ## Challenges
 
-#### Data Limitations and Considerations
+### Data Limitations and Considerations
 
 
-The dataset used in this analysis spans from April 12, 2016, to May 12, 2016, providing only one month of data. This limited timeframe may restrict the scope and generalizability of the findings. Additionally, the 30 user sample size is small, and the methods of participant selection through Amazon Mechanical Turk are not detailed on Kaggle, which introduces potential bias into the analysis. It is also important to note that the data is from 2016 and may not reflect the most recent trends or user behaviors. Furthermore, the lack of demographic information limits the depth and context of the insights that can be derived from this analysis.
+- The dataset used in this analysis spans from April 12, 2016, to May 12, 2016, providing only one month of data. This limited timeframe may restrict the scope and generalizability of the findings. Additionally, the 30 user sample size is small, and the methods of participant selection through Amazon Mechanical Turk are not detailed on Kaggle, which introduces potential bias into the analysis. It is also important to note that the data is from 2016 and may not reflect the most recent trends or user behaviors. Furthermore, the lack of demographic information limits the depth and context of the insights that can be derived from this analysis.
 
 
-#### Consistency
+### Consistency
 
 
-Although the Fitbit Fitness Tracker Dataset description claims that thirty eligible Fitbit users consented to the use of their data, 33 distinct IDs were found within the records during exploration.
+- Although the Fitbit Fitness Tracker Dataset description claims that thirty eligible Fitbit users consented to the use of their data, 33 distinct IDs were found within the records during exploration.
 
 The weightlog table was the most explicit example of this dataset’s challenges and was subsequently dropped:
 Incomplete data: Only 8 unique IDs, which may not provide a comprehensive view of user behavior and patterns.
@@ -59,8 +59,8 @@ Missing values: High number of null values in the Fat column, suggesting unrelia
 Relevance: Weight data was not considered a major variable for the analysis.
 
 
-Datetime Formatting
-While uploading the CSVs into BigQuery there was an error uploading hourlycalories, hourlyintensities, sleepday, weightlog due to issues with datetime formatting. This was resolved within google sheets.  I renamed each changed file with v2.
+### Datetime Formatting
+- While uploading the CSVs into BigQuery there was an error uploading hourlycalories, hourlyintensities, sleepday, weightlog due to issues with datetime formatting. This was resolved within google sheets.  I renamed each changed file with v2.
 
 
 ## Key Findings
