@@ -128,8 +128,4 @@ Bellabeat's target market comprises health-conscious, tech-savvy women who prior
 
 ## User Average Activity
 
-## Statistical Analysis
-![Bellabeat Logo](images/bellabeat-logo.png)
-
-![Activity Tracker](https://github.com/karammulc/Images/blob/main/plot_10.png)
-
+## Statistical ![Uploading _ (3).jpeg…]()
