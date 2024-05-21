@@ -117,7 +117,7 @@ Bellabeat's target market comprises health-conscious, tech-savvy women who prior
 | Weekend | 7550.571429 | 2309.546939  | 5.445999997  |
 
 ## Visualizations
-*Total Steps X Calories Burned*
+![*Total Steps X Calories Burned*](https://github.com/karammulc/bella/blob/main/images/totalstepsxcaloriesburned.png)
 ### General:
 - There is a strong statistically significant positive correlation between Total Steps and Calories Burned for both weekdays and weekends. As Total Steps increase, Calories Burned also tends to increase.
 - The data points form a dense cluster, suggesting that the relationship between Total Steps and Calories Burned is relatively consistent across users.
@@ -126,7 +126,7 @@ Bellabeat's target market comprises health-conscious, tech-savvy women who prior
 ### Weekends:
 - Weekend data points (blue) are more spread out and extend further to the right on the Total Steps axis, indicating that users generally have higher step counts on weekends.
 
-*Very Active Minutes X Calories Burned*
+![*Very Active Minutes X Calories Burned*](https://github.com/karammulc/bella/blob/main/images/veryactiveminutesxcaloriesburned.png)
 ### General:
 There is a statistically significant positive correlation between Very Active Minutes and Calories Burned for both weekdays and weekends across multiple users. As Very Active Minutes increase, Calories Burned also tends to increase.
 ### Weekdays:
@@ -135,7 +135,7 @@ For a given number of Very Active Minutes, users tend to burn slightly more Calo
 Users generally have more Very Active Minutes on weekends compared to weekdays, as the weekend data points extend further to the right on the x-axis.
 The weekend data points show a steeper increase in Calories Burned as Very Active Minutes increase, suggesting that users may engage in more high-intensity activities or have longer durations of active minutes on weekends.
 
-*Sedentary Minutes X Total Time in Bed*
+![*Sedentary Minutes X Total Time in Bed*](https://github.com/karammulc/bella/blob/main/images/sedentaryminutesxtimeinbed.png)
 ### General:
 - There is a statistically significant negative correlation between Sedentary Minutes and Total Time in Bed for both weekdays and weekends. As Total Time in Bed increases, Sedentary Minutes tend to decrease.
 - The data points are concentrated in the middle of the plot, suggesting that most users have a similar range of Total Time in Bed and Sedentary Minutes.
@@ -145,13 +145,13 @@ The weekend data points show a steeper increase in Calories Burned as Very Activ
 ### Weekends:
 - For a given Total Time in Bed, weekend data points tend to have lower Sedentary Minutes compared to weekday data points
 
-*Average Intensity by Time of Day*
+![*Average Intensity by Time of Day*](https://github.com/karammulc/bella/blob/main/images/averageintensitybytimeofday.png)
 ### General:
 - This data suggests that on average, people are exercising with the greatest intensity during afternoon workouts, followed by mornings, with the lowest intensity in the evening.
 
 *Morning: .23   Afternoon: .3   Night: .16*
 
-*Average Steps by Time of Day*
+![*Average Steps by Time of Day*](https://github.com/karammulc/bella/blob/main/images/averagestepsbytimeofday.png)
 General:
 - This data suggests that on average, people are taking more steps during the afternoon, followed by mornings, with the lowest count in the evening.
 *Morning: 381  Afternoon: 508   Night: 240*
@@ -170,10 +170,30 @@ Summary:
 Summary:
 - This study reviews the effectiveness of financial incentive schemes in promoting health-related behaviors. It emphasizes the importance of well-designed incentive programs, highlighting behavioral economics principles like loss aversion and immediate rewards. Key findings include that incentives tied to immediate outcomes and framed as losses can be more motivating than those framed as gains.
 
-Citations:
+### Citations:
+
 Study: "Gamification for health promotion: systematic review of behaviour change techniques in smartphone apps." *BMJ Open*, 2023. Available at: BMJ Open.
+
 Study: "Changing health behaviors using financial incentives: a review from behavioral economics." *BMC Public Health*, 2023. Available at: BMC Public Health.
 
 ## Statistical Analysis
+
+### Statistical significance should be interpreted cautiously given the small sample size of 30 users. I recommend replicating the findings with larger, more representative samples to increase confidence in this case studies findings.
+
+## Relationship between Very Active Minutes and Calories Burned:
+- The correlation coefficient (0.6111983) indicates a strong positive correlation between Very Active Minutes and Calories Burned.
+- The p-value (< 2.2e-16) is highly significant, suggesting that the correlation is statistically significant.
+- The linear regression model shows a significant positive relationship between Very Active Minutes and Calories Burned (coefficient estimate: 12.7989, p-value: < 2e-16).
+- The adjusted R-squared (0.372) indicates that 37.2% of the variance in Calories Burned can be explained by Very Active Minutes.
+## Relationship between Total Steps and Calories Burned:
+- The correlation coefficient (0.4063007) indicates a moderate positive correlation between Total Steps and Calories Burned.
+- The p-value (< 2.2e-16) is highly significant, suggesting that the correlation is statistically significant.
+- The linear regression model shows a significant positive relationship between Total Steps and Calories Burned (coefficient estimate: 0.07412, p-value: < 2e-16).
+- The adjusted R-squared (0.163) indicates that 16.3% of the variance in Calories Burned can be explained by Total Steps.
+## Relationship between Sedentary Minutes and Total Time in Bed:
+- The correlation coefficient (-0.6202804) indicates a strong negative correlation between Sedentary Minutes and Total Time in Bed.
+- The p-value (< 2.2e-16) is highly significant, suggesting that the correlation is statistically significant.
+- The linear regression model shows a significant negative relationship between Sedentary Minutes and Total Time in Bed (coefficient estimate: -0.47574, p-value: < 2e-16).
+- The adjusted R-squared (0.3832) indicates that 38.32% of the variance in Total Time in Bed can be explained by Sedentary Minutes.
 
 ## User Average Activity
