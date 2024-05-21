@@ -87,6 +87,42 @@ Bellabeat's target market comprises health-conscious, tech-savvy women who prior
 
 - Conduct a larger-scale study with a diverse, representative sample of Bellabeat's target audience to gain deeper insights into their needs, preferences, and behaviors. Use this data to refine product features, marketing strategies, and content offerings.
 
+
+## Tables
+## Steps summary:
+
+| Min Steps | Max Steps | Mean Steps | Median Steps |
+|-----------|-----------|------------|--------------|
+| 0         | 36019     | 7637.910638| 7405.5       |
+
+## Distance summary:
+
+| Min Distance | Max Distance | Mean Distance | Median Distance |
+|--------------|--------------|---------------|-----------------|
+| 0            | 28.03000069  | 5.489702122   | 5.244999886     |
+
+## Average Steps by Time of Day
+
+| Day Period | Avg Steps    |
+|------------|--------------|
+| Afternoon  | 508.4705083  |
+| Morning    | 380.5684588  |
+| Night      | 239.9626947  |
+
+## Average activity by day type
+
+| DayType | Avg Steps   | Avg Calories | Avg Distance |
+|---------|-------------|--------------|--------------|
+| Weekday | 7668.699281 | 2301.516547  | 5.505107907  |
+| Weekend | 7550.571429 | 2309.546939  | 5.445999997  |
+
+## Visualizations
+
+## Relevant Studies
+
+## User Average Activity
+
+## Statistical Analysis
 ![Bellabeat Logo](images/bellabeat-logo.png)
 
 
