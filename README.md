@@ -90,6 +90,8 @@ Bellabeat's target market comprises health-conscious, tech-savvy women who prior
 
 
 ## Visualizations
+
+##Relationship of Total Steps and Calories burned
 ![*Total Steps X Calories Burned*](https://github.com/karammulc/bella/blob/main/images/totalstepsxcaloriesburned.png)
 ### General:
 - There is a strong statistically significant positive correlation between Total Steps and Calories Burned for both weekdays and weekends. As Total Steps increase, Calories Burned also tends to increase.
@@ -99,6 +101,8 @@ Bellabeat's target market comprises health-conscious, tech-savvy women who prior
 ### Weekends:
 - Weekend data points (blue) are more spread out and extend further to the right on the Total Steps axis, indicating that users generally have higher step counts on weekends.
 
+
+##Relationship of Very Active Minutes and Calories burned
 ![*Very Active Minutes X Calories Burned*](https://github.com/karammulc/bella/blob/main/images/veryactiveminutesxcaloriesburned.png)
 ### General:
 There is a statistically significant positive correlation between Very Active Minutes and Calories Burned for both weekdays and weekends across multiple users. As Very Active Minutes increase, Calories Burned also tends to increase.
@@ -108,6 +112,7 @@ For a given number of Very Active Minutes, users tend to burn slightly more Calo
 Users generally have more Very Active Minutes on weekends compared to weekdays, as the weekend data points extend further to the right on the x-axis.
 The weekend data points show a steeper increase in Calories Burned as Very Active Minutes increase, suggesting that users may engage in more high-intensity activities or have longer durations of active minutes on weekends.
 
+## Relationship of Sedentary Minutes and Time in Bed
 ![*Sedentary Minutes X Total Time in Bed*](https://github.com/karammulc/bella/blob/main/images/sedentaryminutesxtimeinbed.png)
 ### General:
 - There is a statistically significant negative correlation between Sedentary Minutes and Total Time in Bed for both weekdays and weekends. As Total Time in Bed increases, Sedentary Minutes tend to decrease.
@@ -118,16 +123,18 @@ The weekend data points show a steeper increase in Calories Burned as Very Activ
 ### Weekends:
 - For a given Total Time in Bed, weekend data points tend to have lower Sedentary Minutes compared to weekday data points
 
+## Average Intensity by Time of Day
 ![*Average Intensity by Time of Day*](https://github.com/karammulc/bella/blob/main/images/averageintensitybytimeofday.png)
 ### General:
 - This data suggests that on average, people are exercising with the greatest intensity during afternoon workouts, followed by mornings, with the lowest intensity in the evening.
 
-*Morning: .23   Afternoon: .3   Night: .16*
+### *Morning: .23   Afternoon: .3   Night: .16*
 
+## Average Steps by Time of Day
 ![*Average Steps by Time of Day*](https://github.com/karammulc/bella/blob/main/images/averagestepsbytimeofday.png)
 General:
 - This data suggests that on average, people are taking more steps during the afternoon, followed by mornings, with the lowest count in the evening.
-*Morning: 381  Afternoon: 508   Night: 240*
+### *Morning: 381  Afternoon: 508   Night: 240*
 
 ## Tables
 ## Steps summary:
