@@ -54,7 +54,6 @@ summary(sleepday)
 
 #### Ensuring date and time columns in the datasets are converted from chr to POSIXct format
 ```{r}
-# Convert ActivityDay to Date format
 dailyactivity$ActivityDay <- as.Date(dailyactivity$ActivityDay, format = "%Y-%m-%d")
 dailycalories$ActivityDay <- as.Date(dailycalories$ActivityDay, format = "%Y-%m-%d")
 dailyintensities$ActivityDay <- as.Date(dailyintensities$ActivityDay, format = "%Y-%m-%d")
