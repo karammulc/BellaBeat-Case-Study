@@ -15,8 +15,7 @@ Tables were created in BigQuery for each CSV file.
 
 ## Checking Distinct User IDs
 ```sql
-Queried the count of distinct user IDs in the dailyactivity table:
-sqlCopy codeSELECT DISTINCT Id 
+SELECT DISTINCT Id 
 FROM `bamboo-life-418613.bellabeat.dailyactivity` LIMIT 1000
 ```
 #### *Result: 33 distinct IDs in the dailyactivity table.*
@@ -245,20 +244,19 @@ Added a DayOfWeek column to the dailysteps, dailyintensities, dailycalories, dai
 SELECT *, 
     FORMAT_DATE('%A', ActivityDay) AS DayOfWeek
 FROM bellabeat.dailysteps;
-sqlCopy codeSELECT 
-    *, 
+SELECT  *, 
     FORMAT_DATE('%A', ActivityDay) AS DayOfWeek
 FROM bellabeat.dailyintensities;
-sqlCopy codeSELECT 
-    *, 
+
+SELECT *, 
     FORMAT_DATE('%A', ActivityDay) AS DayOfWeek
 FROM bellabeat.dailycalories;
-sqlCopy codeSELECT
-   *,
+
+SELECT *,
    FORMAT_DATE('%A', ActivityDate) AS DayOfWeek
 FROM `bellabeat.dailyactivity`;
-sqlCopy codeSELECT 
-    *, 
+
+SELECT *, 
     FORMAT_DATE('%A', SleepDay) AS DayOfWeek
 FROM bellabeat.clean_sleepday;
 ```
