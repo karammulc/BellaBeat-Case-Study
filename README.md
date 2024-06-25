@@ -50,9 +50,9 @@ The Bellabeat data analysis project focuses on analyzing user data to gain insig
 - Although the Fitbit Fitness Tracker Dataset description claims that thirty eligible Fitbit users consented to the use of their data, 33 distinct IDs were found within the records during exploration.
 
 The weightlog table was the most explicit example of this dataset’s challenges and was subsequently dropped:
-Incomplete data: Only 8 unique IDs, which may not provide a comprehensive view of user behavior and patterns.
-Missing values: High number of null values in the Fat column, suggesting unreliable data capture or reporting.
-Relevance: Weight data was not considered a major variable for the analysis.
+- Incomplete data: Only 8 unique IDs, which may not provide a comprehensive view of user behavior and patterns.
+- Missing values: High number of null values in the Fat column, suggesting unreliable data capture or reporting.
+- Relevance: Weight data was not considered a major variable for the analysis.
 
 
 ### Datetime Formatting
