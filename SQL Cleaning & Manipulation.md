@@ -163,7 +163,8 @@ WHERE (Id = 4388161847 AND SleepDay = "2016-05-05 00:00:00.000000 UTC")
 | 8378563200 | 2016-04-25 00:00:00 UTC   | 1                 | 388                | 402            |
 
 ## Removing duplicates from the sleepday table // creating a new clean_sleepday table
-
+#### The window function ROW_NUMBER is being used here because observations with the exact same entries (duplicate) are given a 2 within the row_num output.
+#### By then filtering where row_num = 1; in our WHERE clause while using CREATE OR REPLACE TABLE - I am creating a table with no instances of duplication.
 ```sql
 CREATE OR REPLACE TABLE `bellabeat.clean_sleepday` AS
 SELECT *
