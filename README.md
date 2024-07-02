@@ -85,7 +85,7 @@ Bellabeat's target market comprises health-conscious, tech-savvy women who prior
 
 
 
-## Visualizations
+# Visualizations
 
 ## Relationship of Total Steps and Calories burned
 ![*Total Steps X Calories Burned*](https://github.com/karammulc/bella/blob/main/images/totalstepsxcaloriesburned.png)
