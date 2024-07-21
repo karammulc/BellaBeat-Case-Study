@@ -41,7 +41,9 @@ The Bellabeat data analysis project focuses on analyzing user data to gain insig
 ### Data Limitations and Considerations
 
 
-- The dataset used in this analysis spans from April 12, 2016, to May 12, 2016, providing only one month of data. This limited timeframe may restrict the scope and generalizability of the findings. Additionally, the 30 user sample size is small, and the methods of participant selection through Amazon Mechanical Turk are not detailed on Kaggle, which introduces potential bias into the analysis. It is also important to note that the data is from 2016 and may not reflect the most recent trends or user behaviors. Furthermore, the lack of demographic information limits the depth and context of the insights that can be derived from this analysis.
+- The dataset used in this analysis spans from April 12, 2016, to May 12, 2016, providing only one month of data. This limited timeframe may restrict the scope and generalizability of the findings.
+- The 30-user sample size is small, and the methods of participant selection through Amazon Mechanical Turk are not detailed on Kaggle, which introduces potential bias in the analysis.
+-  It is also important to note that the data is from 2016 and may not reflect the most recent trends or user behaviors. The lack of demographic information limits the depth and context of the insights derived from this analysis.
 
 
 ### Consistency
@@ -69,7 +71,7 @@ The weightlog table was the most explicit example of this dataset’s challenges
 
 ## Target Market
 
-Bellabeat's target market comprises health-conscious, tech-savvy women who prioritize a holistic approach to wellness. They value integrating health into their daily lives, aligning their routines with their menstrual cycles, and being part of a supportive community. These women appreciate innovative, data-driven solutions and stylish, functional products, spanning a diverse age range from young adults to older women.
+Bellabeat's target market comprises health-conscious, tech-savvy women who prioritize a holistic approach to wellness. They value integrating health into their daily lives, aligning their routines with their cycles, and being part of a supportive community. These women appreciate innovative, data-driven solutions and stylish, functional products, spanning a diverse age range from young adults to older women.
 
 ## Recommendations
 
