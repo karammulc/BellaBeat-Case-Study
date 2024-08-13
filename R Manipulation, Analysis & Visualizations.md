@@ -99,7 +99,7 @@ distance_summary <- dailyactivity %>%
 #### Calories Summary Statistic Variable Assignment
 ```{r}
 calories_summary <- dailyactivity %>% 
-  summary(
+  summarize(
     min_calories = min(Calories),
     max_calories = max(Calories),
     mean_calories = mean(Calories),
