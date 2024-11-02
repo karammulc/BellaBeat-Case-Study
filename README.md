@@ -62,12 +62,12 @@ The weightlog table was the most explicit example of this dataset’s challenges
 
 
 ## Key Findings
-- There is a strong positive correlation between total steps and calories burned for both weekdays and weekends
-- As total steps increase, calories burned also tends to increase
-- There is a strong positive correlation between very active minutes and calories burned for both weekdays and weekends. As very active minutes increase, calories burned also tends to increase
-- There is a significant negative correlation between sedentary minutes and total time in bed for both weekdays and weekends. As total time in bed increases, sedentary minutes tend to decrease
-- On average, people exercise with the greatest intensity during afternoon workouts, followed by mornings, with the lowest intensity in the evenings
-- On average, people take more steps during the afternoon, followed by mornings, with the lowest step count in the evenings
+- There is a strong positive correlation between total steps and calories burned for both weekdays and weekends.
+- As total steps increase, calories burned also tends to increase.
+- There is a strong positive correlation between very active minutes and calories burned for both weekdays and weekends. As very active minutes increase, calories burned also tends to increase.
+- There is a significant negative correlation between sedentary minutes and total time in bed for both weekdays and weekends. As total time in bed increases, sedentary minutes tend to decrease.
+- On average, people exercise with the greatest intensity during afternoon workouts, followed by mornings, with the lowest intensity in the evenings.
+- On average, people take more steps during the afternoon, followed by mornings, with the lowest step count in the evenings.
 
 ## Target Market
 
