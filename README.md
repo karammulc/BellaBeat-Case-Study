@@ -166,7 +166,7 @@ General:
 
 ## Statistical Analysis
 
-### Statistical significance should be interpreted cautiously given the small sample size of 30 users. I recommend replicating the findings with larger, more representative samples to increase confidence in this case studies findings.
+*### Statistical significance should be interpreted cautiously given the small sample size of 30 users. I recommend replicating the findings with larger, more representative samples to increase confidence in this case studies findings.
 
 ## Relationship between Very Active Minutes and Calories Burned:
 - The correlation coefficient (0.6111983) indicates a strong positive correlation between Very Active Minutes and Calories Burned.
