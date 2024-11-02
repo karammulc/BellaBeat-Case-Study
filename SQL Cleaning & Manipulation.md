@@ -3,7 +3,7 @@
 The SQL queries and steps outlined below demonstrate the process of cleaning, manipulating, and preparing the Bellabeat dataset for further analysis in R. The dataset was thoroughly checked for data quality issues, duplicates, and null values. Relevant columns were added to enhance the analysis, and the tables were renamed for consistency.
 
 The dataset is sourced from Kaggle and contains personal tracker data from 30 Fitbit users who consented to share their data.
-The data includes minute-level output for physical activity, heart rate, and sleep monitoring.
+The data includes minute level output for physical activity, heart rate, and sleep monitoring.
 The dataset spans from April 12, 2016, to May 12, 2016, providing a single month of data.
 
 
