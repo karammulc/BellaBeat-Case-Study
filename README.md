@@ -3,7 +3,7 @@
 ## Project Overview 🔍
 The Bellabeat data analysis project focuses on analyzing user data to gain insights and inform marketing strategies for Bellabeat, a high tech manufacturer of health focused products for women. Through my analysis, I will extensively explore relationships and patterns within historical health tech data. My aim is to use my findings, along with research papers and industry reports, to develop a new data backed marketing strategy for Bellabeat’s stakeholders.
 
-## Documentation
+## Documentation 📝
 [SQL Cleaning & Manipulation Markdown](https://github.com/karammulc/bella/blob/main/SQL%20Cleaning%20%26%20Manipulation.md)
 
 [R Manipulation, Analysis & Visualizations Markdown](https://github.com/karammulc/bella/edit/main/R%20Manipulation%2C%20Analysis%20%26%20Visualizations.md)
